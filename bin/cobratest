@@ -22,6 +22,10 @@ instructions = OptionParser.new do |opts|
     options[:display] = "results"
   end
 
+  opts.on("-t", "--test-runner", "Choose a test runner") do
+    options[:runner] = "test.sh"
+  end
+
   opts.on("-v", "--verbose", "Verbose output of all parts of the calculation") do
     options[:display] = "verbose"
   end

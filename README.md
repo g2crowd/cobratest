@@ -25,6 +25,7 @@ Or install it yourself as:
     Options are...
         -h, -H, --help                   Display this help message.
         -r, --results                    DEFAULT Display the directories of the components in need of running tests
+        -t, --test-runner                Choose a test runner
         -v, --verbose                    Verbose output of all parts of the calculation
         -s, --since BRANCH               Specify BRANCH target to calculate against
 
@@ -40,6 +41,13 @@ There are sample #cbra folder structures in `spec/examples`. Here is an example 
 This output can be used to run the necessary tests like so:
 
     bin/cobratest ./cobratest/spec/examples/letters/A | xargs -n1 /bin/bash
+
+You can choose a different test runner like so:
+
+    $ bin/cobratest --test-runner 'rspec spec' ./cobratest/spec/examples/letters/A
+    ./cobratest/spec/examples/letters/B/rspec spec
+    ./cobratest/spec/examples/letters/C/rspec spec
+    ./cobratest/spec/examples/letters/A/rspec spec
 
 In verbose mode one can check the correctness of cobratest's calculation:
 
